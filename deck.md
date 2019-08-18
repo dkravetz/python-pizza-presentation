@@ -34,7 +34,7 @@
 * Repeatability <!-- .element: class="fragment" -->
 * Portability <!-- .element: class="fragment" -->
 * Reusability <!-- .element: class="fragment" -->
-* Too many to mention in a slide <!-- .element: class="fragment" -->
+* Many more <!-- .element: class="fragment" -->
 
 Note:
 Repeatability: your container behaves as expected on different computers.
@@ -86,11 +86,11 @@ This implies knowing how to deal with potential errors for different platforms, 
 
 
 We tried the PEX route...
-Note:
-This lead to huge PEX files, which anyway you needed somehow to compile the linux variant of libpostal from a Mac...
 
 
 It didn't work out for us...
+Note:
+This lead to huge PEX files, which anyway you needed somehow to compile the linux variant of libpostal from a Mac, and a few other troubles.
 
 
 
