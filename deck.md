@@ -57,7 +57,7 @@ which we need to configure, compile and install...
 For both MacOS and Linux <!-- .slide: data-background="./img/horror.gif" -->
 
 
-This is the relevant snippet
+Ubuntu configure, make and compile
 <pre><code class="dockerfile" data-line-numbers="6, 7, 12">
 wget -O libpostal.tar.gz \ 
   https://github.com/openvenues/libpostal/archive/v1.1-alpha.tar.gz && \
@@ -81,7 +81,7 @@ Note:
 This implies knowing how to deal with potential errors for different platforms, and makes distribution and deploys significantly harder than they need to be.
 
 
-<!-- .slide: data-background="./img/thinking.gif" data-background-size="50%" data-background-color="black"-->
+<!-- .slide: data-background="./img/thinking_2.gif" data-background-size="50%" data-background-color="black"-->
 # What are our options? <!-- .element: class="fragment" -->
 
 
@@ -90,8 +90,15 @@ Note:
 This lead to huge PEX files, which anyway you needed somehow to compile the linux variant of libpostal from a Mac...
 
 
+<!-- .slide: data-background="./img/nope.gif" data-background-size="50%" data-background-color="black" -->
+
+
+It didn't work out for us...
+
+
 
 <!-- .slide: data-background="./img/docker_logo.png" data-background-size="50%" -->
+
 
 
 * Portability <!-- .element: class="fragment" -->
@@ -103,3 +110,6 @@ Portability: We can ignore the host's OS.
 Usability: No need to know how to configure and compile
 Fidelity: The development environment is as close as possible to production
 And my favourite...
+
+
+<!-- .slide: data-background="./img/omg.gif" data-background-size="50%" data-background-color="black" -->
