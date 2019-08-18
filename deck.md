@@ -3,7 +3,7 @@
 
 
 
-# About me
+## About me
 
 * Daniel Kravetz <!-- .element: class="fragment" -->
 * Backend developer <!-- .element: class="fragment" --> 
@@ -21,7 +21,7 @@
 
 
 
-# What does this mean?
+## What does this mean?
 
 * No CPU emulation <!-- .element: class="fragment" -->
 * No Hypervisor <!-- .element: class="fragment" -->
@@ -29,7 +29,7 @@
 
 
 
-# Benefits of using Docker
+## Benefits of using Docker
 
 * Repeatability <!-- .element: class="fragment" -->
 * Portability <!-- .element: class="fragment" -->
