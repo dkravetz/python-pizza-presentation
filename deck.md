@@ -29,7 +29,7 @@
 
 
 
-## Benefits of using Docker
+## Why Docker?
 
 * Repeatability <!-- .element: class="fragment" -->
 * Portability <!-- .element: class="fragment" -->
@@ -88,9 +88,6 @@ This implies knowing how to deal with potential errors for different platforms, 
 We tried the PEX route...
 Note:
 This lead to huge PEX files, which anyway you needed somehow to compile the linux variant of libpostal from a Mac...
-
-
-<!-- .slide: data-background="./img/nope.gif" data-background-size="50%" data-background-color="black" -->
 
 
 It didn't work out for us...
