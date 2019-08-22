@@ -9,9 +9,6 @@
 * Backend developer <!-- .element: class="fragment" --> 
 * Devops <!-- .element: class="fragment" --> 
 * Enjoy hiking with my camera <!-- .element: class="fragment" --> 
-* Twitter <!-- .element: class="fragment" --> [@Av4t4r](https://twitter.com/Av4t4r)
-* Github <!-- .element: class="fragment" --> [dkravetz](https://github.com/dkravetz)
-
 
 
 # What is Docker?
@@ -25,7 +22,12 @@
 
 * No CPU emulation <!-- .element: class="fragment" -->
 * No Hypervisor <!-- .element: class="fragment" -->
+* Namespaces <!-- .element: class="fragment" -->
+* cgroups <!-- .element: class="fragment" -->
 * It's just a process managed by the Docker service <!-- .element: class="fragment" -->
+Note:
+Unlike a VM, docker doesn't rely on hardware emulation nor hypervisors. It uses namespaces to provide isolation between containers (each container gets its own namespace) and cgroups (control groups) to provide isolation to hardware resources. That said, on non Linux platforms, docker relies on one form of emulation or another, HyperKit for MacOS and HyperV for Windows
+
 
 
 
@@ -38,8 +40,8 @@
 
 Note:
 Repeatability: your container behaves as expected on different computers.
-Portabiliy: No need to worry about other dependencies. I'll get back to this one in a minute.
-Reusabilty: Shared components can be re-used.
+Portability: No need to worry about other dependencies. I'll get back to this one in a minute.
+Reusability: Shared components can be re-used.
 
 
 
@@ -54,7 +56,9 @@ Reusabilty: Shared components can be re-used.
 which we need to configure, compile and install...
 
 
-For both MacOS and Linux <!-- .slide: data-background="./img/horror.gif" -->
+<!-- .slide: data-background="./img/horror.gif" -->
+Note:
+For both MacOS AND linux
 
 
 Ubuntu configure, make and compile
@@ -73,28 +77,33 @@ wget -O libpostal.tar.gz \
 </code></pre>
 
 Note:
-In order for this to work, you need to install gcc, specify a configuration directory (which can change based on the OS), etc.
+In order for this to work, you need to install gcc (a C/C++ compiler), know how to configure, compile and install a C++ project (for different platforms!). This is problematic. What happens (line 7) if the path is different between platforms? What if the configuration script (line 6) performs some platform specific instructions?
 
 
-### This means mantaining at least two target platforms
+### This means maintaining at least two target platforms
 Note:
 This implies knowing how to deal with potential errors for different platforms, and makes distribution and deploys significantly harder than they need to be.
 
 
 <!-- .slide: data-background="./img/thinking_2.gif" data-background-size="50%" data-background-color="black"-->
-# What are our options? <!-- .element: class="fragment" -->
+Note:
+What are our options?
 
 
 We tried the PEX route...
-
-
-It didn't work out for us...
 Note:
-This lead to huge PEX files, which anyway you needed somehow to compile the linux variant of libpostal from a Mac, and a few other troubles.
+PEX files are basically a zip file with superpowers. They are flagged as executable, contain the entire Python runtime, as well as your code, and your dependencies.
+
+
+...it didn't work out for us
+Note:
+This means that we ended up with a LOT of very large PEX files. We had a build system to help us with this, but it still presented all of the same problems, it just simplified deployment and distribution, but nothing else.
 
 
 
 <!-- .slide: data-background="./img/docker_logo.png" data-background-size="50%" -->
+Note:
+Enter docker. What did it bring for us?
 
 
 
@@ -106,7 +115,14 @@ Note:
 Portability: We can ignore the host's OS.
 Usability: No need to know how to configure and compile
 Fidelity: The development environment is as close as possible to production
-And my favourite...
+And my personal favorite...
 
 
 <!-- .slide: data-background="./img/omg.gif" data-background-size="50%" data-background-color="black" -->
+
+
+
+## The end
+<img data-src="img/qrcode.png">
+
+Twitter [@Av4t4r](https://twitter.com/Av4t4r) | Github [dkravetz](https://github.com/dkravetz)
