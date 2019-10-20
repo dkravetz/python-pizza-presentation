@@ -17,6 +17,7 @@
 # What is Docker?
 
 
+
 ### It's nothing more than an isolated process
 
 
@@ -47,14 +48,18 @@ Reusabilty: Shared components can be re-used.
 <img data-src="img/story_time.gif">
 
 
+
 ### We use Python...
+
 
 
 ### ...and a native C library
 which we need to configure, compile and install...
 
 
+
 For both MacOS and Linux <!-- .slide: data-background="./img/horror.gif" -->
+
 
 
 Ubuntu configure, make and compile
@@ -76,16 +81,20 @@ Note:
 In order for this to work, you need to install gcc, specify a configuration directory (which can change based on the OS), etc.
 
 
+
 ### This means mantaining at least two target platforms
 Note:
 This implies knowing how to deal with potential errors for different platforms, and makes distribution and deploys significantly harder than they need to be.
+
 
 
 <!-- .slide: data-background="./img/thinking_2.gif" data-background-size="50%" data-background-color="black"-->
 # What are our options? <!-- .element: class="fragment" -->
 
 
+
 We tried the PEX route...
+
 
 
 It didn't work out for us...
@@ -109,4 +118,7 @@ Fidelity: The development environment is as close as possible to production
 And my favourite...
 
 
+
 <!-- .slide: data-background="./img/omg.gif" data-background-size="50%" data-background-color="black" -->
+
+
