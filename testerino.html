@@ -7,34 +7,36 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/reveal.css">
-  <style type="text/css">
+  <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+  <style>
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -43,9 +45,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -155,17 +157,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="section" class="slide level2">
 <h2></h2>
 <h3 id="example-dockerfile-fragment">Example Dockerfile fragment</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="fu">wget</span> -O libpostal.tar.gz <span class="dt">\ </span></a>
-<a class="sourceLine" id="cb1-2" title="2">  <span class="ex">https</span>://github.com/openvenues/libpostal/archive/v1.1-alpha.tar.gz <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb1-3" title="3">  <span class="fu">tar</span> -xzvf libpostal.tar.gz <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb1-4" title="4">  <span class="fu">rm</span> -f libpostal.tar.gz <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb1-5" title="5">  <span class="ex">./bootstrap.sh</span> <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb1-6" title="6">  <span class="ex">./configure</span> --datadir=/usr/share/ <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb1-7" title="7">  <span class="fu">make</span> -j4 <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb1-8" title="8">  <span class="fu">make</span> install <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb1-9" title="9">  <span class="bu">cd</span> .. <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb1-10" title="10">  <span class="fu">rm</span> -fr libpostal-1.1-alpha <span class="kw">&amp;&amp;</span> <span class="kw">\</span></a>
-<a class="sourceLine" id="cb1-11" title="11">  <span class="ex">ldconfig</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">wget</span> -O libpostal.tar.gz <span class="dt">\ </span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="ex">https</span>://github.com/openvenues/libpostal/archive/v1.1-alpha.tar.gz <span class="kw">&amp;&amp;</span> <span class="kw">\</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">tar</span> -xzvf libpostal.tar.gz <span class="kw">&amp;&amp;</span> <span class="kw">\</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">rm</span> -f libpostal.tar.gz <span class="kw">&amp;&amp;</span> <span class="kw">\</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="ex">./bootstrap.sh</span> <span class="kw">&amp;&amp;</span> <span class="kw">\</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="ex">./configure</span> --datadir=/usr/share/ <span class="kw">&amp;&amp;</span> <span class="kw">\</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="fu">make</span> -j4 <span class="kw">&amp;&amp;</span> <span class="kw">\</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>  <span class="fu">make</span> install <span class="kw">&amp;&amp;</span> <span class="kw">\</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>  <span class="bu">cd</span> .. <span class="kw">&amp;&amp;</span> <span class="kw">\</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>  <span class="fu">rm</span> -fr libpostal-1.1-alpha <span class="kw">&amp;&amp;</span> <span class="kw">\</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>  <span class="ex">ldconfig</span></span></code></pre></div>
 <aside class="notes">
 <p>In order for this to work, you need to install gcc, specify a configuration directory (which can change based on the OS), etc.</p>
 </aside>
@@ -217,7 +219,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="section-7" class="slide level2">
 <h2></h2>
-<p>A Django app <img data-src="img/django-dockerfile.png" /></p>
+<h3 id="a-django-app">A Django app</h3>
+<p><img data-src="img/django-hello-world.png" /></p>
 <aside class="notes">
 <p>As you can see, it’s the basic Hello world from Django.</p>
 <p>So, how do you run this? Do you use <code>python</code>, <code>python3</code> or maybe <code>./</code>? How do you <code>pip install</code> (pip vs pip3)?</p>
@@ -241,10 +244,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2></h2>
 <p><img data-src="img/dig_deeper.gif" /></p>
 </section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<h3 id="production-ready-dockerfile">Production ready Dockerfile</h3>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<p><img data-src="img/django-dockerfile-prod.png" /></p>
+<aside class="notes">
+<p>Docker’s <code>entrypoint</code> is what gets executed by default, on container start. This gets executed every time you start an image from this container.</p>
+<p>An <code>entrypoint</code> can be <strong>anything</strong> that the container can execute. Bash, python, go, rust, whatever.</p>
+</aside>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash numberLines"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="ex">python</span> manage.py migrate</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="ex">python</span> manage.py collectstatic</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="ex">python</span> manage.py runserver <span class="va">$@</span></span></code></pre></div>
+</section>
     </div>
   </div>
 
-  <script src="./lib/js/head.min.js"></script>
   <script src="./js/reveal.js"></script>
 
   <script>

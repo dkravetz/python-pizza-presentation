@@ -116,8 +116,8 @@ And my favourite...
 ### Let's look at a more typical scenario
 
 ##
-A Django app
-![](img/django-dockerfile.png)
+### A Django app
+![](img/django-hello-world.png)
 
 ::: notes
 As you can see, it's the basic Hello world from Django.
@@ -143,3 +143,26 @@ However, this is mostly useful for an `sqlite` setup. Let's dig deeper.
 
 ##
 ![](img/dig_deeper.gif)
+
+##
+### Production ready Dockerfile
+
+
+##
+![](img/django-dockerfile-prod.png)
+
+::: notes
+Docker's `entrypoint` is what gets executed by default, on container start. This gets executed every time you start an image from this container.
+
+An `entrypoint` can be **anything** that the container can execute. Bash, python, go, rust, whatever.
+:::
+
+##
+
+~~~ {.bash .numberLines }
+#!/bin/bash
+
+python manage.py migrate
+python manage.py collectstatic
+python manage.py runserver $@
+~~~
