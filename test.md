@@ -66,7 +66,9 @@ wget -O libpostal.tar.gz \
 
 ::: notes
 In order for this to work, you need to install gcc, specify a configuration directory (which can change based on the OS), etc.
-:::
+:::atus=200 OK token=gD4sj7vK
+Downloading artifacts for xain:frontend:build-andy-ui (330354296)...
+
 
 ##
 ### This means mantaining at least two target platforms
@@ -166,3 +168,15 @@ python manage.py migrate
 python manage.py collectstatic
 python manage.py runserver $@
 ~~~
+
+::: notes
+As you can see, in this case, the static migrations and static files collection happens on the container startup.
+
+This makes sense for a production environment. This will be executed in the correct environment.
+:::
+
+## Q&A/Demo
+
+## The End
+
+Twitter [\@Av4t4r](https://twitter.com/Av4t4r) | Github [dkravetz](https://github.com/dkravetz)
