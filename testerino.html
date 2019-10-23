@@ -244,18 +244,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="section-11" class="slide level2">
 <h2></h2>
-<h3 id="production-ready-dockerfile">Production ready Dockerfile</h3>
-</section>
-<section id="section-12" class="slide level2">
-<h2></h2>
+<p>Production ready Dockerfile</p>
 <p><img data-src="img/django-dockerfile-prod.png" /></p>
 <aside class="notes">
 <p>Docker’s <code>entrypoint</code> is what gets executed by default, on container start. This gets executed every time you start an image from this container.</p>
 <p>An <code>entrypoint</code> can be <strong>anything</strong> that the container can execute. Bash, python, go, rust, whatever.</p>
 </aside>
 </section>
-<section id="section-13" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
+<p>Entrypoint</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash numberLines"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="ex">python</span> manage.py migrate</span>
@@ -265,6 +263,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>As you can see, in this case, the static migrations and static files collection happens on the container startup.</p>
 <p>This makes sense for a production environment. This will be executed in the correct environment.</p>
 </aside>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<p>Development ready Dockerfile</p>
+<p><img data-src="img/django-dockerfile-prod.png" /></p>
+<aside class="notes">
+<p>You can use the same image. The main difference is, how do you run said image.</p>
+<p>You need to mount a volume (same thing that happens when you plug in a pendrive/usb stick into your laptop)</p>
+</aside>
+</section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<p><img data-src="img/django-container-volume.png" /></p>
 </section>
 <section id="qademo" class="slide level2">
 <h2>Q&amp;A/Demo</h2>

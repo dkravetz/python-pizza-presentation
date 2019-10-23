@@ -147,10 +147,8 @@ However, this is mostly useful for an `sqlite` setup. Let's dig deeper.
 ![](img/dig_deeper.gif)
 
 ##
-### Production ready Dockerfile
+Production ready Dockerfile
 
-
-##
 ![](img/django-dockerfile-prod.png)
 
 ::: notes
@@ -160,6 +158,7 @@ An `entrypoint` can be **anything** that the container can execute. Bash, python
 :::
 
 ##
+Entrypoint
 
 ~~~ {.bash .numberLines }
 #!/bin/bash
@@ -174,6 +173,20 @@ As you can see, in this case, the static migrations and static files collection 
 
 This makes sense for a production environment. This will be executed in the correct environment.
 :::
+
+## 
+Development ready Dockerfile
+
+![](img/django-dockerfile-prod.png)
+
+::: notes
+You can use the same image. The main difference is, how do you run said image. 
+
+You need to mount a volume (same thing that happens when you plug in a pendrive/usb stick into your laptop)
+:::
+
+##
+![](img/django-container-volume.png)
 
 ## Q&A/Demo
 
